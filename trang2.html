@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hộp Quà</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url(https://4kwallpapers.com/images/walls/thumbs_3t/19677.jpg);
+            background-size: cover; 
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+        h1 {
+            font-size: clamp(2rem, 5vw, 4rem);
+            color: #db3482;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
+        }
+        .box-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: #ff6f61;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            border-radius: 40px;
+            text-align: center;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+        .box:hover {
+            transform: scale(1.1);
+        }
+        .result {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+        .image-container {
+            max-width: 300px;
+            margin-bottom: 10px; /* Khoảng cách giữa hình và chữ */
+        }
+        .image-container img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .result-message {
+            font-size: 18px;
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pick 1 box pls</h1>
+    <div class="box-container">
+        <div class="box" onclick="showResult(1)">Gift 1</div>
+        <div class="box" onclick="showResult(2)">Gift 2</div>
+        <div class="box" onclick="showResult(3)">Gift 3</div>
+        <div class="box" onclick="showResult(4)">Gift 4</div>
+        <div class="box" onclick="showResult(5)">Gift 5</div>
+    </div>
+    <div id="output" class="result"></div>
+
+    <script>
+        function showResult(boxNumber) {
+            const output = document.getElementById('output');
+            const messages = [
+                "Gái nhận được một bó hoa!",
+                "Gái nhận được một thỏ thị trấn!",
+                "Gái nhận được một 12 con giáp!",
+                "Gái nhận được một thỏ thị trấn hoặc 12 con giáp!",
+                "Gái nhận được một thỏi son tùy thích!"
+            ];
+            const images = [
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0k0pfDNYsS92tHfDxyEe8C7sx4qfT5OoVTw&s",
+                "https://bizweb.dktcdn.net/100/467/909/products/z5959584262839-ba896d30611e85c09d09a32dc276e7de.jpg?v=1729673213650",
+                "https://bizweb.dktcdn.net/thumb/grande/100/241/553/products/z5866008689219-364fe53a13aa45e6ff89e3adf354ac47.jpg?v=1729587194027",
+                "https://product.hstatic.net/200000863773/product/z5862770775441-7c8a82c776871bab9_933f60b041194374a7be2af0a97ce746_master.jpg",
+                "https://bizweb.dktcdn.net/100/465/979/products/13.png?v=1725608082073"
+            ];
+
+            // Hiển thị hình ảnh và dòng chữ bên dưới ảnh
+            output.innerHTML = `
+                <div class="image-container">
+                    <img src="${images[boxNumber - 1]}" alt="Hình Ảnh">
+                </div>
+                <div class="result-message">${messages[boxNumber - 1]}</div>
+            `;
+        }
+    </script>
+</body>
+</html>

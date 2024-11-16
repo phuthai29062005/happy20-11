@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc mừng gái 20-11</title>
+    <style>
+        /* Reset mặc định */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url(https://4kwallpapers.com/images/walls/thumbs_3t/19775.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 4rem); /* Kích thước chữ linh hoạt */
+            color: #db3482;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Thêm bóng chữ */
+            animation: moveRight 10s linear infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes moveRight {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        h2 {
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            color: #3498db;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: 2px solid #3498db;
+            width: 80%;
+            max-width: 400px;
+            margin-bottom: 15px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus {
+            border-color: #2980b9;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+            transform: scale(1.05); /* Hiệu ứng phóng to khi hover */
+        }
+
+        .container {
+            width: 90%;
+            max-width: 600px;
+            background: rgba(255, 255, 255, 0.8); /* Nền trong suốt */
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Thêm hiệu ứng đổ bóng */
+        }
+    </style>
+</head>
+<body>
+    <h1>Chào mừng gái đã đến được trang thứ 2</h1>
+
+    <div class="container">
+        <h2>Mời gái nhập họ và tên của gái</h2>
+        <input type="text" id="name" placeholder="Tên gái...">
+        <h2>Gái sinh năm bao nhiêu nhể?</h2>
+        <input type="text" id="year" placeholder="Năm gái sinh ra...">
+        <button onclick="submitInfo()">Gửi</button>
+    </div>
+
+    <script>
+        function submitInfo() {
+            const name = document.getElementById("name").value.trim();
+            const year = document.getElementById("year").value.trim();
+
+            if (year === "2003" && name.toLowerCase() === "nguyễn thị khánh huyền") {
+                alert("Ôi, đúng là gái rồi. Trang này làm ra là để dành cho gái. Lời đầu chúc cô giáo tương lai 20/11 zui zẻ, sắp trở thành cô giáo. Chúc gái tương lai sẽ trở thành 1 cô giáo giỏi. Sớm thành bộ trưởng bộ giáo dục để còn dc nhờ vả nhé. Thanks for reading!!!");
+                window.location.href = "trang2.html";
+            } else {
+                alert("Oops, gái đã nhập sai thông tin hoặc trang này không thuộc về gái!");
+            }
+        }
+    </script>
+</body>
+</html>
